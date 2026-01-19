@@ -1,28 +1,46 @@
-# 🏥 Caretaker Portal
+# 🧑‍⚕️ Caretaker Portal
 
-A full-stack web application designed to support caretakers in managing clients, tasks, and daily responsibilities through a centralized portal.
+The **Caretaker Portal** is a full-stack web application that serves as the backend management system for a smart care and monitoring solution. It allows caretakers and administrators to manage users, tasks, and care-related data through a secure web interface.
 
-This project demonstrates backend development, authentication flows, database integration, and server-rendered UI using Node.js and Express.
-
----
-
-## ✨ Overview
-
-The **Caretaker Portal** provides a structured system for caretakers to log in, manage assigned responsibilities, and interact with stored data through a clean and functional web interface. It is built with scalability and maintainability in mind and follows a modular backend architecture.
-
-This repository serves both as a functional application and as a demonstration of full-stack development skills.
+This portal is designed to function independently as a web app, while also acting as the **backend service** for a connected Smart Mirror interface (MagicMirror project).
 
 ---
 
-## 🚀 Features
+## 📌 Purpose
 
-* User authentication and session management
-* Role-based access control (caretaker / admin logic ready)
+The Caretaker Portal centralizes care management by providing:
+
+* Secure access for caretakers and administrators
+* Structured data management for care tasks and schedules
+* A backend API layer that external interfaces (e.g., Smart Mirror UI) can consume
+
+---
+
+## ✨ Features
+
+* User authentication and session handling
+* Role-based access control (caretaker / admin logic)
+* Server-rendered views using Handlebars
 * RESTful routing with Express
-* Server-side rendering with Handlebars
-* Database abstraction and models
-* Modular utility and helper functions
-* Integration tests for core functionality
+* Modular database models
+* Utility helpers and shared methods
+* Integration-ready API endpoints
+* Integration and mock testing support
+
+---
+
+## 🔗 Project Context
+
+This repository represents the **backend and management portal** portion of a larger system.
+
+* **Caretaker Portal (this repo):**
+  Handles authentication, data storage, and caretaker workflows.
+
+* **Smart Mirror Interface (separate repo):**
+  Consumes backend data to display reminders, schedules, and care information.
+
+➡️ Related project:
+[https://github.com/lybamughees/magicmirror](https://github.com/lybamughees/magicmirror)
 
 ---
 
@@ -42,14 +60,13 @@ This repository serves both as a functional application and as a demonstration o
 
 **Database**
 
-* Configurable via environment variables
-* Abstracted database layer
+* Environment-configured database connection
 
-**Tooling & Testing**
+**Tooling**
 
 * npm
 * Integration testing framework
-* Environment variable configuration
+* Environment variable support
 
 ---
 
@@ -65,11 +82,11 @@ caretakerportal/
 ├── views/                # Handlebars templates
 ├── app.js                # Express app configuration
 ├── auth.js               # Authentication logic
-├── constants.js          # Application constants
-├── database.js           # Database connection logic
-├── methods.js            # Shared helper methods
-├── server.js             # Application entry point
-├── utils.js              # Utility functions
+├── constants.js          # App constants
+├── database.js           # Database connection
+├── methods.js            # Shared helper functions
+├── server.js             # App entry point
+├── utils.js              # Utility helpers
 ├── package.json
 └── README.md
 ```
@@ -80,10 +97,8 @@ caretakerportal/
 
 ### Prerequisites
 
-Make sure you have the following installed:
-
-* **Node.js** (v16 or higher recommended)
-* **npm**
+* Node.js (v16+ recommended)
+* npm
 
 ---
 
@@ -106,15 +121,7 @@ npm install
 
 ### Environment Configuration
 
-Create a `.env` file in the root directory:
-
-```bash
-cp .env.example .env
-```
-
-Then update the values inside `.env` with your database credentials and configuration details.
-
-Example:
+Create a `.env` file in the project root:
 
 ```env
 PORT=3000
@@ -133,7 +140,7 @@ SESSION_SECRET=your_secret
 npm start
 ```
 
-The application will be available at:
+The app will run at:
 
 ```
 http://localhost:3000
@@ -143,52 +150,54 @@ http://localhost:3000
 
 ## 🧪 Running Tests
 
-To run integration tests:
-
 ```bash
 npm test
 ```
 
 ---
 
-## 🔐 Authentication Flow
+## 🔐 Authentication
 
-* Users authenticate via server-side sessions
-* Session middleware protects restricted routes
-* Authentication logic is centralized for reuse and clarity
+* Server-side session-based authentication
+* Protected routes for authenticated users
+* Centralized authentication logic for reuse across routes
 
 ---
 
-## 📈 Future Enhancements
+## 📈 Future Improvements
 
-* Dashboard analytics for caretakers
-* Client progress tracking
-* Notifications and reminders
-* Enhanced role management
-* API documentation
-* UI/UX refinements
+* Care task analytics dashboard
+* Medication adherence tracking
+* Notification and reminder system
+* Expanded API documentation
+* UI/UX enhancements
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome!
-
 1. Fork the repository
-2. Create a new branch
+2. Create a feature branch
 
    ```bash
    git checkout -b feature/your-feature
    ```
-3. Commit your changes
+3. Commit changes
 
    ```bash
-   git commit -m "Add new feature"
+   git commit -m "Add feature"
    ```
-4. Push to your branch
+4. Push to branch
 
    ```bash
    git push origin feature/your-feature
    ```
 5. Open a Pull Request
+
+---
+
+## ⭐ Notes
+
+This project was built to demonstrate backend architecture, authentication workflows, and full-stack integration with external interfaces.
+
 
